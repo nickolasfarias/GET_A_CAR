@@ -5,6 +5,7 @@
 <h2><%= @car.price%>/hour</h2>
 >>>>>>> master
 <h2><%= @car.fuel %></h2>
+<h2><%= cl_image_tag @car.photo.key, height: 300, width: 400, crop: :fill %></h2>
 <h2><%= @car.consumption %></h2>
 <h2><%= @car.seats %></h2>
 <h2><%= @car.doors %></h2>
