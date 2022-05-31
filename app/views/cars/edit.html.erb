@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <%= simple_form_for @user do |f| %>
+      <%= f.input :model %>
+      <%= f.input :price %>
+      <%= f.select :fuel %>
+      <%= f.input :consumption %>
+      <%= f.input :seats %>
+      <%= f.input :doors %>
+      <%= f.input :description %>
+      <%= f.select :address %>
+      <%= f.button :submit, class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
+</div>
