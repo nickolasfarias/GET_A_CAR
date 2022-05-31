@@ -1,0 +1,23 @@
+<div class="container my-3">
+  <div class="row">
+    <div class="col-6 m-auto shadow border bg-white">
+      <h1 class="form-header text-center my-3">Create a car: </h1>
+      <%= simple_form_for car do |f| %>
+      <%= f.input :model %>
+      <%= f.input :price %>
+      <%= f.input :photo, as: :file %>
+      <%= f.input :fuel, collection: ["Gasoline", "Premium Gasoline", "Electric"] %>
+      <%= f.input :consumption %>
+      <%= f.input :seats, collection: [2, 5, 7]%>
+      <%= f.input :doors, collection: [2, 4] %>
+      <%= f.input :description %>
+      <%= f.input :address, collection: ["Galeão airport", "Santos Dummont airport", "Barra shopping"] %>
+      <div class="row">
+        <div class="col-3 m-auto">
+          <%= f.submit class: "btn btn-primary btn-lg mb-3" %>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>
