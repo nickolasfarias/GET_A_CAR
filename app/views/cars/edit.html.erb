@@ -1,6 +1,7 @@
-<div class="container">
+<div class="container my-3 justify-content-center">
   <div class="row">
-    <div class="col">
+    <div class="col-6 m-auto">
+      <h1>Update your car</h1>
       <%= simple_form_for(@car) do |f| %>
         <%= f.input :model %>
         <%= f.input :price %>
@@ -11,7 +12,9 @@
         <%= f.input :doors, collection: [2, 4] %>
         <%= f.input :description %>
         <%= f.input :address, collection: ["Galeão airport", "Santos Dummont airport", "Barra shopping"] %>
-        <%= f.submit %>
+        <div class="col-4 m-auto">
+          <%= f.submit class: "btn btn-primary btn-lg"%>
+        </div>
       <% end %>
     </div>
   </div>
