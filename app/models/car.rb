@@ -10,4 +10,5 @@ class Car < ApplicationRecord
   validates :doors, presence: true
   validates :description, presence: true
   validates :address, presence: true
+  has_one_attached :photo
 end
