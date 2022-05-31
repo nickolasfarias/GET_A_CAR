@@ -1,7 +1,11 @@
 <div class="container my-3">
   <div class="row">
     <div class="col-6 m-auto shadow border bg-white">
-      <h1 class="form-header text-center my-3">Create a car: </h1>
+      <% if car.id %>
+        <h1 class="form-header text-center my-3">Update your car: </h1>
+      <% else %>
+        <h1 class="form-header text-center my-3">Create your car: </h1>
+      <% end %>
       <%= simple_form_for car do |f| %>
       <%= f.input :model %>
       <%= f.input :price %>
