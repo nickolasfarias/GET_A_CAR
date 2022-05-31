@@ -8,7 +8,7 @@ class CarsController < ApplicationController
   end
 
   def new
-    
+
   end
 
   def create
@@ -24,7 +24,10 @@ class CarsController < ApplicationController
   end
 
   def destroy
+    @car = Car.find(params[:id])
+    @car.destroy
 
+    redirect_to cars_path
   end
 
   private

@@ -10,3 +10,9 @@
 <h2><%= @car.doors %></h2>
 <h2><%= @car.description %></h2>
 <h2><%= @car.address %></h2>
+
+
+<%= link_to "Delete #{@car.model}",
+            car_path(@car),
+            method: :delete,
+            data: { confirm: "Are you sure?" } %>
