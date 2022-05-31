@@ -1,13 +1,1 @@
-<h1>Add one car that you would like to provide: </h1>
-<%= simple_form_for(@car) do |f| %>
-  <%= f.input :model %>
-  <%= f.input :price %>
-  <%= f.input :photo, as: :file %>
-  <%= f.input :fuel, collection: ["Gasoline", "Premium Gasoline", "Electric"] %>
-  <%= f.input :consumption %>
-  <%= f.input :seats, collection: [2, 5, 7]%>
-  <%= f.input :doors, collection: [2, 4] %>
-  <%= f.input :description %>
-  <%= f.input :address, collection: ["Galeão airport", "Santos Dummont airport", "Barra shopping"] %>
-  <%= f.submit %>
-<% end %>
+<%= render "form", car: @car %>
