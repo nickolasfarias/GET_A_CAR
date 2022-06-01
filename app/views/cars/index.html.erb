@@ -1,0 +1,26 @@
+<div class="card-bg">
+  <div class="card-image"></div>
+  <div>
+    <p>Porsche GT2RS 2020</p>
+    <p>$714</p>
+  </div>
+</div>
+
+
+
+
+<div class="cards">
+  <% @cars.each do |car| %>
+    <div class="card-trip">
+      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+      <div class="card-trip-infos">
+        <div>
+          <h2><%= car.model %></h2>
+          <p><%= car.description %></p>
+        </div>
+        <h2 class="card-trip-pricing">$<%= car.price %></h2>
+        <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+      </div>
+    </div>
+  <% end %>
+</div>
