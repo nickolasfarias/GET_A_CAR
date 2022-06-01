@@ -1,7 +1,7 @@
 class Car < ApplicationRecord
   belongs_to :user
   has_many :bookings
-  validates :model, presence: true
+  validates :model, presence: true, length: { maximum: 22 }
   validates :price, presence: true
   validates :model, presence: true
   validates :fuel, presence: true
