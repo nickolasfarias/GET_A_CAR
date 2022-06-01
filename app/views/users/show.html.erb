@@ -1,6 +1,20 @@
-<div>
-  <h1 class="m-3"> Welcome <%= @user.first_name.capitalize%> <%= @user.last_name.capitalize%>!</h1>
-</div>
-<div>
+<div class="m-3">
+  <h1> Welcome <%= @user.first_name.capitalize%> <%= @user.last_name.capitalize%>!</h1>
   <h3> See all your cars</h3>
+  <div class="cards">
+    <% @cars_from_owner.each do |car| %>
+    <div class="card-trip">
+      <%= cl_image_tag car.photo.key, height: 300, width: 400, crop: :fill %>
+      <div class="card-trip-infos">
+        <div>
+          <h2><%= car.model %></h2>
+          <p><%= car.description %></p>
+        </div>
+        <h2 class="card-trip-pricing mb-3">$<%= car.price %></h2>
+        <%= cl_image_tag current_user.photo.key, class: "card-trip-user avatar-bordered", crop: :fill %>
+        <%= link_to "Update your car", edit_car_path(car), class: "btn btn-outline-dark mt-3" %>
+      </div>
+    </div>
+    <% end %>
+  </div>
 </div>

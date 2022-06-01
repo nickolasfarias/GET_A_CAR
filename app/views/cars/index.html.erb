@@ -12,14 +12,14 @@
 <div class="cards">
   <% @cars.each do |car| %>
     <div class="card-trip">
-      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+      <%= cl_image_tag car.photo.key, height: 300, width: 400, crop: :fill %>
       <div class="card-trip-infos">
         <div>
           <h2><%= car.model %></h2>
           <p><%= car.description %></p>
         </div>
         <h2 class="card-trip-pricing">$<%= car.price %></h2>
-        <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+        <%= cl_image_tag car.user.photo.key, class: "card-trip-user avatar-bordered", crop: :fill %>
       </div>
     </div>
   <% end %>
