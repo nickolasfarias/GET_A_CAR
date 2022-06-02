@@ -15,7 +15,7 @@
             <%= link_to "Home", cars_path, class: "nav-button mx-2" %>
           </li>
           <li class="nav-item">
-            <%= link_to "My cars", user_path(current_user), class: "nav-button mx-2" %>
+            <%= link_to "My profile", user_path(current_user), class: "nav-button mx-2" %>
           </li>
           <li class="nav-item">
             <%= link_to "Create a car", new_car_path, class: "nav-button mx-2" %>
@@ -29,6 +29,9 @@
             </div>
           </li>
         <% else %>
+          <li class="nav-item">
+            <%= link_to "Home", cars_path, class: "nav-button mx-2" %>
+          </li>
           <li class="nav-item">
             <%= link_to "Login", new_user_session_path, class: "nav-button" %>
           </li>
