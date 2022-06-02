@@ -1,0 +1,22 @@
+<div class="container">
+  <%= cl_image_tag @car.photo.key, height: 700, width: 1000, crop: :fill, class: "mx-auto d-block car-img" %>
+  <div class="margin-car-info">
+    <div class="">
+      <h1 class="model"><%= @car.model %></h1>
+      <h2><%= icon('fas', 'dollar-sign') %> <%= @car.price%>/day</h2>
+      <h2><%= icon('fas', 'gas-pump') %> <%= @car.fuel %></h2>
+      <h2><%= icon('fas', 'tint') %> <%= @car.consumption %></h2>
+      <h2><%= icon('fas', 'chair') %> <%= @car.seats %> seats</h2>
+      <h2><%= icon('fas', 'door-open') %> <%= @car.doors %> doors</h2>
+      <hr>
+      <h2 class="model">Description</h2>
+      <h2><%= @car.description %></h2>
+      <hr>
+      <h2 class="model">Pickup & Return Location</h2>
+      <h2><%= @car.address %></h2>
+      <hr>
+      <h2><%= icon('fas', 'dollar-sign') %> Total price of your experience =  <strong>$</strong> <%= @booking.total_price.to_i %></h2>
+      <hr>
+    </div>
+  </div>
+</div>
