@@ -5,7 +5,8 @@ class BookingsController < ApplicationController
   end
 
   def show
-
+    @car = Car.find(params[:car_id])
+    @booking = Booking.find(params[:id])
   end
 
   def new
@@ -25,8 +26,12 @@ class BookingsController < ApplicationController
   end
 
   def destroy
+    @booking = Booking.find(params[:id])
+    @booking.destroy
 
+    redirect_to user_path(current_user)
   end
+
 
   private
 

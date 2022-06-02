@@ -64,3 +64,19 @@ border-radius: 25px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
+.card-positioning {
+  position: relative;
+
+}
+
+.icon-positioning{
+  position: absolute;
+  top: 10px;
+  right: 5px;
+}
+
+.go-booking {
+  position: absolute;
+  bottom: 10px;
+  right: 5px;
+}
