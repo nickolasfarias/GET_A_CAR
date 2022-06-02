@@ -1,4 +1,5 @@
 class CarsController < ApplicationController
+  skip_before_action :authenticate_user!, only: :index
   def index
     @cars = Car.all
   end
@@ -15,7 +16,7 @@ class CarsController < ApplicationController
     @car = Car.new(car_params)
     @car.user = current_user
     if @car.save
-      redirect_to car_path(@car)
+      redirect_to user_path(current_user)
     else
       render :new
     end
