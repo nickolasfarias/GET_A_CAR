@@ -3,6 +3,7 @@
   grid-template-columns: 2fr 2fr;
   grid-gap: 16px;
   margin-top: 60px;
+  margin-left: 150px;
 }
 
 .features-icons {
@@ -15,4 +16,10 @@
 .description {
   display: grid;
   margin-top: 50px;
+}
+
+.margin-car-info {
+  display: grid;
+  grid-template-columns: 2fr 2fr;
+
 }

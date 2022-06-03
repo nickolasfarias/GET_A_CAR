@@ -1,10 +1,10 @@
-<div class="banner" style="background-image: url(Banner.png); width: 700px; height: 1728px">
-  <div class="container">
-    <h1>Prime brings the best luxury cars for you!</h1>
-  </div>
+<div class="banner mx-auto" style="background-image: url('<%= image_path 'banner-2.png' %>')">
 </div>
 
 <div class="container">
+  <div class="title">
+    <h1>Prime Suggestions:</h1>
+  </div>
   <div class="cards mt-3">
     <% @cars.each do |car| %>
       <div class="card-trip">

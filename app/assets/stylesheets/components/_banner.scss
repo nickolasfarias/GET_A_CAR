@@ -1,8 +1,10 @@
 .banner {
-  background-size: 1728px 700px;
+  width: 1000px;
+  height: 600px;
+  background-size: 1000px, 600px;
   background-position: center;
+  background-repeat: no-repeat;
 }
-
 
 .banner h1 {
   margin: 0;
