@@ -22,14 +22,15 @@
 <div class="container">
   <div class="cards mt-5">
     <% @cars.each do |car| %>
-      <div class="card-trip">
+      <div class="card-trip" style="border-radius: 8px;">
         <%= cl_image_tag car.photo.key, height: 300, width: 400, crop: :fill %>
-        <div class="card-trip-infos">
+        <div class="card-trip-infos" style="background-color: black;
+    color: rgb(255,250,250);">
           <div>
             <h2><%= car.model %></h2>
           </div>
           <h2 class="card-trip-pricing">$<%= car.price %>/day</h2>
-          <%= link_to "Details", car_path(car), class: "card-button" %>
+          <strong><%= link_to "Details", car_path(car), class: "card-button" %></strong>
           <%= cl_image_tag car.user.photo.key, class: "card-trip-user avatar-bordered", crop: :fill %>
         </div>
       </div>

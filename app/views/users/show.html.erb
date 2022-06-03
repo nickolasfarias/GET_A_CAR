@@ -1,7 +1,11 @@
 <div class="container">
   <div class="m-3">
     <h1> Welcome <%= @user.first_name.capitalize%> <%= @user.last_name.capitalize%>!</h1>
-    <h3> See all your cars</h3>
+    <% if @cars_from_owner.blank?%>
+    <h3 class="m-5">Sorry, you don't have any car yet</h3>
+    <% else %>
+    <h3 class="m-5"> You have <%= pluralize @cars_from_owner.size, "car" %></h3>
+    <% end %>
     <div class="cards">
       <% @cars_from_owner.each do |car| %>
       <div class="card-trip">
@@ -22,8 +26,11 @@
       </div>
       <% end %>
     </div>
-
-    <h3 class="mt-3"> See all your bookings</h3>
+    <% if @bookings.blank?%>
+    <h3 class="m-5">Sorry, you don't have any booking yet</h3>
+    <% else %>
+    <h3 class="m-5"> You have <%= pluralize @bookings.size, "booking" %></h3>
+    <% end %>
     <div class="cards">
       <% @bookings.each do |booking| %>
       <div class="card-category card-positioning" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= image_path 'keys.jpg' %>')">
