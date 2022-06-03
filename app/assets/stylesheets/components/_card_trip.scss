@@ -1,13 +1,19 @@
 .card-trip {
   overflow: hidden;
-  background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  background: black;
+  box-shadow: 0 0 0px rgba(0,0,0,0.2);
+  border-radius: 25px;
+  height: 300px;
+  width: 426px;
+  grid-row: 100px;
+  grid-column: 50px;
 }
 
 .card-trip > img {
   height: 200px;
   width: 100%;
   object-fit: cover;
+  border-radius: 25px, 25px, 0, 0;
 }
 
 .card-trip h2 {
@@ -19,6 +25,7 @@
   font-size: 12px;
   opacity: .7;
   margin: 0;
+  color: white
 }
 
 
@@ -28,6 +35,7 @@
   justify-content: space-between;
   align-items: flex-end;
   position: relative;
+  color: white;
 }
 
 .card-trip-infos .card-trip-user {

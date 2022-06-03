@@ -1,0 +1,18 @@
+.master {
+  display: grid;
+  grid-template-columns: 2fr 2fr;
+  grid-gap: 16px;
+  margin-top: 60px;
+}
+
+.features-icons {
+  display: grid;
+  grid-template-columns: 2fr 2fr;
+  grid-gap: 100px;
+  grid-column-gap: 100px;
+}
+
+.description {
+  display: grid;
+  margin-top: 50px;
+}

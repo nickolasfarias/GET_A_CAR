@@ -1,19 +1,35 @@
 <div class="container">
   <%= cl_image_tag @car.photo.key, height: 700, width: 1000, crop: :fill, class: "mx-auto d-block car-img" %>
+
   <div class="margin-car-info">
     <h1 class="model"><%= @car.model %></h1>
-    <h2><%= icon('fas', 'dollar-sign') %> <%= @car.price%>/day =</h2>
-    <h2><%= icon('fas', 'gas-pump') %> <%= @car.fuel %></h2>
-    <h2><%= icon('fas', 'tint') %> <%= @car.consumption %></h2>
-    <h2><%= icon('fas', 'chair') %> <%= @car.seats %> seats</h2>
-    <h2><%= icon('fas', 'door-open') %> <%= @car.doors %> doors</h2>
-    <hr>
-    <h2 class="model">Description</h2>
-    <h2><%= @car.description %></h2>
-    <hr>
-    <h2 class="model">Pickup & Return Location</h2>
-    <h2><%= @car.address %></h2>
-    <hr>
+  </div>
+  <div class="master">
+    <div>
+      <div class="features">
+        <h2><%= icon('fas', 'dollar-sign') %> <%= @car.price%>/hour</h2>
+
+        <div class="features-icons">
+          <h2><%= icon('fas', 'gas-pump') %> <%= @car.fuel %></h2>
+          <h2><%= icon('fas', 'tint') %> <%= @car.consumption %></h2>
+        </div>
+
+        <div class="features-icons">
+          <h2><%= icon('fas', 'chair') %> <%= @car.seats %> seats</h2>
+          <h2><%= icon('fas', 'door-open') %> <%= @car.doors %> doors</h2>
+        </div>
+      </div>
+
+      <div class="description">
+        <h2 class="model">Description</h2>
+        <h2><%= @car.description %></h2>
+      </div>
+    </div>
+
+    <div class="location">
+      <h2 class="model">Pickup & Return Location</h2>
+      <h2><%= @car.address %></h2>
+
     <div class="mb-4">
       <%= link_to "Rent this car", new_car_booking_path(@car), class: "card-button" %>
     </div>
