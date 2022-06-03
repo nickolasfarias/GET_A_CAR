@@ -2,11 +2,13 @@
   <%= cl_image_tag @car.photo.key, height: 700, width: 1000, crop: :fill, class: "mx-auto d-block car-img" %>
   <div class="margin-car-info">
     <h1 class="model"><%= @car.model %></h1>
-    <h2><%= icon('fas', 'dollar-sign') %> <%= @car.price%>/day =</h2>
-    <h2><%= icon('fas', 'gas-pump') %> <%= @car.fuel %></h2>
-    <h2><%= icon('fas', 'tint') %> <%= @car.consumption %></h2>
-    <h2><%= icon('fas', 'chair') %> <%= @car.seats %> seats</h2>
-    <h2><%= icon('fas', 'door-open') %> <%= @car.doors %> doors</h2>
+    <div>
+      <h2><%= icon('fas', 'dollar-sign') %> <%= @car.price%>/day</h2>
+      <h2><%= icon('fas', 'gas-pump') %> <%= @car.fuel %></h2>
+      <h2><%= icon('fas', 'tint') %> <%= @car.consumption %></h2>
+      <h2><%= icon('fas', 'chair') %> <%= @car.seats %> seats</h2>
+      <h2><%= icon('fas', 'door-open') %> <%= @car.doors %> doors</h2>
+    </div>
     <hr>
     <h2 class="model">Description</h2>
     <h2><%= @car.description %></h2>
@@ -15,7 +17,7 @@
     <h2><%= @car.address %></h2>
     <hr>
     <div class="mb-4">
-      <%= link_to "Rent this car", new_car_booking_path(@car), class: "card-button" %>
+      <%= link_to "Rent this car", new_car_booking_path(@car), class: "card-button btn-lg" %>
     </div>
   </div>
 </div>
