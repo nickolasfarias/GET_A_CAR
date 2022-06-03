@@ -48,3 +48,35 @@ border-radius: 25px;
 .model{
   font-weight: bold;
 }
+
+.card-category {
+  background-size: cover;
+  background-position: center;
+  height: 180px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.card-positioning {
+  position: relative;
+
+}
+
+.icon-positioning{
+  position: absolute;
+  top: 10px;
+  right: 5px;
+}
+
+.go-booking {
+  position: absolute;
+  bottom: 10px;
+  right: 5px;
+}

@@ -29,6 +29,9 @@
     <div class="location">
       <h2 class="model">Pickup & Return Location</h2>
       <h2><%= @car.address %></h2>
+
+    <div class="mb-4">
+      <%= link_to "Rent this car", new_car_booking_path(@car), class: "card-button" %>
     </div>
   </div>
 </div>

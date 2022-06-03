@@ -1,0 +1,17 @@
+<div class="container my-3">
+  <div class="row">
+    <div class="col-6 m-auto shadow border bg-white">
+        <h1 class="form-header text-center my-3">Create a booking: </h1>
+      <%= simple_form_for([@car, @booking]) do |f| %>
+      <%= f.input :started_at, as: :date, html5: true %>
+      <%= f.input :ended_at, as: :date, html5: true %>
+        <hr>
+      <div class="row">
+        <div class="col-3 m-auto">
+          <%= f.submit "Rent now!", class: "card-button btn-lg mb-3" %>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>
