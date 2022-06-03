@@ -11,4 +11,7 @@ class Car < ApplicationRecord
   validates :description, presence: true
   validates :address, presence: true
   has_one_attached :photo
+
+  include PgSearch::Model
+  pg_search_scope :search_by_model, against: %i[model], using: { tsearch: { prefix: true } }
 end

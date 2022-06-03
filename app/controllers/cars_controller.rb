@@ -1,7 +1,11 @@
 class CarsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:index, :show]
+  skip_before_action :authenticate_user!, only: %i[index show]
   def index
-    @cars = Car.where.not(user: current_user)
+    if params[:query].present?
+      @cars = Car.where("model ILIKE ?", "%#{params[:query]}%")
+    else
+      @cars = Car.where.not(user: current_user)
+    end
   end
 
   def show
