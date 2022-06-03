@@ -17,6 +17,11 @@
       <hr>
       <h2><%= icon('fas', 'dollar-sign') %> Total price of your experience =  <strong>$</strong> <%= @booking.total_price.to_i %></h2>
       <hr>
+      <%= link_to "Remove booking?",
+                  booking_path(@booking),
+                  method: :delete,
+                  data: { confirm: "Are you sure?" },
+                  class:"card-button" %>
     </div>
   </div>
 </div>

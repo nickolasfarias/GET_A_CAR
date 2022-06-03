@@ -37,7 +37,7 @@ class CarsController < ApplicationController
     @car = Car.find(params[:id])
     @car.destroy
 
-    redirect_to cars_path
+    redirect_to user_path(current_user)
   end
 
   private
