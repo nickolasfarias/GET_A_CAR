@@ -6,8 +6,13 @@
       <hr>
     </div>
 
-    <div class="welcome2">
-      <h3> See all your cars:</h3>
+    <div class="welcome2 m-5">
+      <% if @cars_from_owner.size == 0 %>
+        <h3 class="mb-5">You don't have any car</h3>
+        <%= link_to "Create a car", new_car_path, class: "mt-3 card-button" %>
+      <% else %>
+        <h3> See all your cars:</h3>
+      <% end %>
     </div>
 
     <div class="cards">
