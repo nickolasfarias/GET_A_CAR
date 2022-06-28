@@ -1,25 +1,24 @@
-<div class="container mt-3" style="position: relative; left:-15px;">
+<div class="container mt-3" style="position: relative; left:93px;">
   <%= form_tag cars_path, method: :get do %>
-  <div>
-      <%= text_field_tag :query,
+  <div class="d-flex" style="width:86vw;">
+    <%= text_field_tag :query,
         params[:query],
-        class: "form-control",
-        placeholder: "Find a car"
-      %>
-  </div>
-  <div>
-    <%= submit_tag "Search", class: "btn btn-dark mt-1 mb-4"%>
+        class: "form-control w-75",
+        placeholder: "Find a car",
+        style:"height:47px;"
+    %>
+    <%= submit_tag "Search", class: "nav-button mb-4"%>
   </div>
     <% end %>
 </div>
 
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1502161254066-6c74afbf07aa?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80); background-repeat: no-repeat;">
-  <div class="container">
-    <h1>Prime brings the best luxury cars for you!</h1>
-  </div>
+<div class="banner mx-auto" style="background-image: url('<%= image_path 'bannerprime.png' %>')">
 </div>
 
 <div class="container">
+  <div class="title">
+    <h1>Prime Suggestions:</h1>
+  </div>
   <div class="cards mt-5">
     <% @cars.each do |car| %>
       <div class="card-trip" style="border-radius: 8px;">
@@ -30,7 +29,7 @@
             <h2><%= car.model %></h2>
           </div>
           <h2 class="card-trip-pricing">$<%= car.price %>/day</h2>
-          <strong><%= link_to "Details", car_path(car), class: "card-button" %></strong>
+          <strong><%= link_to "Details", car_path(car), class: "new-button mb-2" %></strong>
           <%= cl_image_tag car.user.photo.key, class: "card-trip-user avatar-bordered", crop: :fill %>
         </div>
       </div>

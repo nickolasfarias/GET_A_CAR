@@ -1,11 +1,15 @@
 <div class="container">
   <div class="m-3">
-    <h1> Welcome <%= @user.first_name.capitalize%> <%= @user.last_name.capitalize%>!</h1>
-    <% if @cars_from_owner.blank?%>
-    <h3 class="m-5">Sorry, you don't have any car yet</h3>
-    <% else %>
-    <h3 class="m-5"> You have <%= pluralize @cars_from_owner.size, "car" %></h3>
-    <% end %>
+
+    <div class="welcome">
+      <h1> Welcome <%= @user.first_name.capitalize%> <%= @user.last_name.capitalize%>!</h1>
+      <hr>
+    </div>
+
+    <div class="welcome2">
+      <h3> See all your cars:</h3>
+    </div>
+
     <div class="cards">
       <% @cars_from_owner.each do |car| %>
       <div class="card-trip">
@@ -13,8 +17,9 @@
         <div class="card-trip-infos">
           <div>
             <h2><%= car.model %></h2>
+            <p><%= car.description %></p>
           </div>
-          <h2 class="card-trip-pricing mb-2">$<%= car.price %></h2>
+          <h2 class="card-trip-pricing mb-3">$<%= car.price %></h2>
           <%= cl_image_tag current_user.photo.key, class: "card-trip-user avatar-bordered", crop: :fill %>
           <%= link_to icon('fas', 'edit'), edit_car_path(car), class: "card-button" %>
           <%= link_to icon('fas', 'trash-alt'),
@@ -25,28 +30,28 @@
         </div>
       </div>
       <% end %>
-    </div>
-    <% if @bookings.blank?%>
-    <h3 class="m-5">Sorry, you don't have any booking yet</h3>
-    <% else %>
-    <h3 class="m-5"> You have <%= pluralize @bookings.size, "booking" %></h3>
-    <% end %>
-    <div class="cards">
-      <% @bookings.each do |booking| %>
-      <div class="card-category card-positioning" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= image_path 'keys.jpg' %>')">
-          Booked a <%= booking.car.model %>
-          <div class="pl-3 icon-positioning">
-          <%= link_to icon('fas', 'trash-alt'),
-                  booking_path(booking),
-                  method: :delete,
-                  data: { confirm: "Are you sure?" },
-                  class:"card-button" %>
-          </div>
-          <div class="pl-3 go-booking">
-          <%= link_to icon('fas', 'info'), "/cars/#{booking.car_id}/bookings/#{booking.id}", class: "card-button" %>
-          </div>
       </div>
-      <% end %>
-    </div>
+        <% if @bookings.blank?%>
+        <h3 class="m-5">Sorry, you don't have any booking yet</h3>
+        <% else %>
+        <h3 class="m-5"> You have <%= pluralize @bookings.size, "booking" %></h3>
+        <% end %>
+        <div class="cards">
+          <% @bookings.each do |booking| %>
+          <div class="card-category card-positioning" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= image_path 'keys.jpg' %>')">
+              Booked a <%= booking.car.model %>
+              <div class="pl-3 icon-positioning">
+              <%= link_to icon('fas', 'trash-alt'),
+                      booking_path(booking),
+                      method: :delete,
+                      data: { confirm: "Are you sure?" },
+                      class:"card-button" %>
+              </div>
+              <div class="pl-3 go-booking">
+              <%= link_to icon('fas', 'info'), "/cars/#{booking.car_id}/bookings/#{booking.id}", class: "card-button" %>
+              </div>
+          </div>
+          <% end %>
+        </div>
   </div>
 </div>

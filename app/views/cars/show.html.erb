@@ -1,23 +1,38 @@
 <div class="container">
   <%= cl_image_tag @car.photo.key, height: 700, width: 1000, crop: :fill, class: "mx-auto d-block car-img" %>
-  <div class="margin-car-info">
-    <h1 class="model"><%= @car.model %></h1>
-    <div>
-      <h2><%= icon('fas', 'dollar-sign') %> <%= @car.price%>/day</h2>
-      <h2><%= icon('fas', 'gas-pump') %> <%= @car.fuel %></h2>
-      <h2><%= icon('fas', 'tint') %> <%= @car.consumption %></h2>
-      <h2><%= icon('fas', 'chair') %> <%= @car.seats %> seats</h2>
-      <h2><%= icon('fas', 'door-open') %> <%= @car.doors %> doors</h2>
+  <div class="all mx-auto">
+    <div class="margin-car-info mt-5">
+      <h1 class="model m-3" style="font-size:3.2em;"><%= @car.model %></h1>
+      <h2 class="mt-4"><%= icon('fas', 'dollar-sign') %> <%= @car.price%>/hour</h2>
     </div>
-    <hr>
-    <h2 class="model">Description</h2>
-    <h2><%= @car.description %></h2>
-    <hr>
-    <h2 class="model">Pickup & Return Location</h2>
-    <h2><%= @car.address %></h2>
-    <hr>
-    <div class="mb-4">
-      <%= link_to "Rent this car", new_car_booking_path(@car), class: "card-button btn-lg" %>
+
+    <div class="master">
+      <div>
+        <div class="features">
+
+          <div class="features-icons">
+            <h2><%= icon('fas', 'gas-pump') %> <%= @car.fuel %></h2>
+            <h2><%= icon('fas', 'tint') %> <%= @car.consumption %></h2>
+          </div>
+
+          <div class="features-icons">
+            <h2><%= icon('fas', 'chair') %> <%= @car.seats %> seats</h2>
+            <h2><%= icon('fas', 'door-open') %> <%= @car.doors %> doors</h2>
+          </div>
+        </div>
+
+        <div class="description mt-5 pb-3">
+          <h2 class="model">Description</h2>
+          <h2><%= @car.description %></h2>
+        </div>
+
+      </div>
+
+      <div class="location" style="padding-top: 42px;">
+        <h2 class="model">Pickup & Return Location</h2>
+        <h2 class="mb-5"><%= @car.address %></h2>
+        <%= link_to "Rent this car", new_car_booking_path(@car), class: "card-button btn-lg mt-4" %>
+      </div>
     </div>
   </div>
 </div>
