@@ -17,6 +17,10 @@
 
 <div class="container">
   <div class="title">
+  <% if @cars.empty? %>
+    <h1>Sorry, we didn't find any car</h1>
+  </div>
+  <% else %>
     <h1>Prime Suggestions:</h1>
   </div>
   <div class="cards mt-5">
@@ -35,4 +39,5 @@
       </div>
     <% end %>
   </div>
+  <% end %>
 </div>
