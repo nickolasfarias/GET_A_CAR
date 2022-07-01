@@ -21,11 +21,11 @@
   </div>
   <div class="cards mt-5">
     <% @cars.each do |car| %>
-      <div class="card-trip" style="border-radius: 8px;">
+      <div class="card-trip" style="border-radius: 8px;">z
         <%= cl_image_tag car.photo.key, height: 300, width: 400, crop: :fill %>
         <div class="card-trip-infos" style="background-color: black;
     color: rgb(255,250,250);">
-          <div>
+          <div style="width:50%;">
             <h2><%= car.model %></h2>
           </div>
           <h2 class="card-trip-pricing">$<%= car.price %>/day</h2>
